@@ -2,20 +2,21 @@
 FROM node:13.12.0-alpine
 
 # set working directory
-WORKDIR /app
+WORKDIR .
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH ./node_modules/.bin:$PATH
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
+COPY ./app/package.json ./
+COPY ./app/package-lock.json ./
 RUN npm install --silent
 RUN npm install react-scripts@3.4.1 -g --silent
-RUN npm run build
 
 # add app
-COPY . ./
+COPY ./app ./
+
+RUN npm run build
 
 # app is running on port 3000
 EXPOSE 3000
