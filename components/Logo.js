@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Logo(props) {
+export default function NavLogo(props) {
     return (
         <Link href="/">
             <a>
@@ -32,7 +32,7 @@ export default function Logo(props) {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <h1 className="invisible sm:visible">Chartmetric</h1>
+                    <h1 className="hidden sm:block">Chartmetric</h1>
                 </div>
             </a>
         </Link>

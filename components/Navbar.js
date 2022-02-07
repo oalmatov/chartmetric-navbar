@@ -1,27 +1,23 @@
-import Link from 'next/link';
-import Logo from './Logo';
-import NavLink from './NavLink';
+import NavLogo from './Logo';
+import NavIcon from './NavLink';
 
-import { FaBullhorn, FaRegBell, FaBars, FaSearch } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
+import { FaBullhorn, FaRegBell, FaBars } from 'react-icons/fa';
 import SearchBar from './SearchBar';
 
 export default function Navbar() {
     return (
-        <div className="container-fluid shadow-md h-[50px] bg-[#1d2b38] text-white items-center w-full">
-            <nav className="p-2 mx-auto">
-                <div className="flex justify-between">
-                    <div>
-                        <Logo width="30px" height="30px" />
-                    </div>
-                    <div className="flex items-center space-x-5">
-                        <SearchBar />
-                        <NavLink icon={<FaBullhorn />} />
-                        <NavLink icon={<FaRegBell />} />
-                        <NavLink icon={<FaBars />} />
-                    </div>
+        <div className="container-fluid h-[50px] bg-[#1d2b38] text-gray-300 items-center w-full px-1">
+            <div className="flex justify-evenly sm:justify-between h-[50px]">
+                <div className="items-center p-1 my-auto">
+                    <NavLogo width="30px" height="30px" />
                 </div>
-            </nav>
+                <div className="flex items-center my-auto space-x-1">
+                    <SearchBar />
+                    <NavIcon icon={<FaBullhorn />} to={'/'} />
+                    <NavIcon icon={<FaRegBell />} to={'/'} />
+                    <NavIcon icon={<FaBars />} to={'/'} />
+                </div>
+            </div>
         </div>
     );
 }
