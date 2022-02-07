@@ -1,3 +1,7 @@
+## Tools Used
+- Tailwind
+- React
+
 ## Software Requirements:
 
 -   [Docker Desktop](https://docs.docker.com/get-docker/)
